@@ -1,0 +1,11 @@
+<form (submit)="addItem()">
+  <input type="text" name="newTodo" [(ngModel)]="newTodo" />
+  <button type="submit">ADD</button>
+</form>
+<h3>TO DO:</h3>
+<ul>
+  <li @flyInOut *ngFor="let todo of todos">
+    <span>{{ todo }}</span>
+    <button type="button" (click)="removeItem(todo)">X</button>
+  </li>
+</ul>
